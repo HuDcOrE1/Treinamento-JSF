@@ -11,15 +11,9 @@
 </h:head>
 <h:body>
 	<h:form>
-	Nome
-		<p:inputText value="#{agenteMB.nome}"></p:inputText><br />
-	Id
-		<p:inputText value="#{agenteMB.id}"></p:inputText><br />
-	Descrição	
-		<p:inputText value="#{agenteMB.descricao}"></p:inputText><br />
-		<p:commandButton value="Chamar Bean" action="#{agenteMB.chamar()}"></p:commandButton>
-
+		<p:outputLabel value="#{agenteMB.nome}"></p:outputLabel><br />
+		<p:outputLabel value="#{agenteMB.id}"></p:outputLabel><br />
+		<p:outputLabel value="#{agenteMB.descricao}"></p:outputLabel><br />
 	</h:form>
-
 </h:body>
 </html>
