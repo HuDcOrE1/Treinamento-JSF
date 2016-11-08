@@ -26,7 +26,8 @@ public class Agente implements java.io.Serializable {
 	public Agente() {
 	}
 
-	public Agente(String nome, Date dtContratacao, Integer tempoServico) {
+	public Agente(Integer idAgente, String nome, Date dtContratacao, Integer tempoServico) {
+		this.idAgente = idAgente;
 		this.nome = nome;
 		this.dtContratacao = dtContratacao;
 		this.tempoServico = tempoServico;
@@ -34,7 +35,6 @@ public class Agente implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "idAgente", unique = true, nullable = false)
 	public Integer getIdAgente() {
 		return this.idAgente;

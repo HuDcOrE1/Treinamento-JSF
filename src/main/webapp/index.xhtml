@@ -8,18 +8,27 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
+
 </h:head>
-<h:body>
-	<h:form>
-	Nome
-		<p:inputText value="#{agenteMB.nome}"></p:inputText><br />
-	Id
-		<p:inputText value="#{agenteMB.id}"></p:inputText><br />
-	Descrição	
-		<p:inputText value="#{agenteMB.descricao}"></p:inputText><br />
-		<p:commandButton value="Chamar Bean" action="#{agenteMB.chamar()}"></p:commandButton>
-
-	</h:form>
-
-</h:body>
+	<h:body>
+		<h:form>	
+		<p:growl id="msgs" showDetail="false" />
+		<p:fieldset legend="Cadastro de Agente">
+		<p:layout style="min-width:600px;min-height:200px;">
+		  <p:layoutUnit position="center">
+		   	<h:panelGrid columns="2" cellpadding="0">
+		   	<p:outputLabel value="Nome: " for="nome" />	
+			<p:inputText id="nome" value="#{agenteMB.agente.nome}"></p:inputText>
+			 <p:outputLabel value="Tempo de serviço: " for="tServico" />
+			<p:inputText id="tServico" value="#{agenteMB.agente.tempoServico}"></p:inputText>
+			<p:outputLabel value="Data de contratação: " for="dtC" />
+	        <p:calendar id="dtC" value="#{agenteMB.agente.dtContratacao}" />
+			<p:commandButton value="Cadastrar" action="#{agenteMB.chamar()}"></p:commandButton>
+	      </h:panelGrid>
+	    </p:layoutUnit>
+		</p:layout>
+		</p:fieldset>
+		</h:form>
+	
+	</h:body>
 </html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+	<h:body>
+		<h:form>	
+		<p:growl id="msgs" showDetail="false" />
+		<p:fieldset legend="Cadastro de Proprietário">
+		<p:layout style="min-width: 350px;min-height:350px;">
+		  <p:layoutUnit position="center">
+		   	<h:panelGrid columns="2" cellpadding="0">
+		   	
+		   	<p:outputLabel value="CPF: " for="cpf" />	
+			<p:inputText id="cpf" value="#{proprietarioMB.proprietario.cpfProprietario}"></p:inputText>
+			
+		   	<p:outputLabel value="Nome: " for="nome" />	
+			<p:inputText id="nome" value="#{proprietarioMB.proprietario.nome}"></p:inputText>
+			
+			<p:outputLabel value="Sexo: " for="sexo" />
+			<p:inputText id="sexo" value="#{proprietarioMB.proprietario.sexo}"></p:inputText>
+			
+			<p:outputLabel value="Data de nascimento: " for="dtN" />
+	        <p:calendar id="dtN" value="#{proprietarioMB.proprietario.dtNascimento}" />
+	        
+	        <p:outputLabel value="UF: " for="uf" />
+	        <p:inputText id="uf" value="#{proprietarioMB.proprietario.uf}" />
+	        
+	        <p:outputLabel value="Cidade: " for="city" />
+	        <p:inputText id="city" value="#{proprietarioMB.proprietario.cidade}" />
+	        
+	        <p:outputLabel value="Endereço: " for="end" />
+	        <p:inputText id="end" value="#{proprietarioMB.proprietario.endereco}" />
+	        
+	        
+	        <p:outputLabel value="Bairro: " for="brr" />
+	        <p:inputText id="brr" value="#{proprietarioMB.proprietario.bairro}" />
+	        
+			
+			<p:commandButton value="Cadastrar" action="#{proprietarioMB.chamar()}"></p:commandButton>
+	      
+	      </h:panelGrid>
+	    </p:layoutUnit>
+		</p:layout>
+		</p:fieldset>
+		</h:form>
+	
+	</h:body>
+</html>
